@@ -95,7 +95,7 @@ class GetAchievemnetsUnlocked
             $badge_name = 'Beginner';
         }else if($total_achievments >= 4 && $total_achievments < 8)
         {
-            $badge_name = 'Beginner';
+            $badge_name = "Intermediate";
         }else if($total_achievments >= 8 && $total_achievments < 10)
         {
             $badge_name = "Advanced";
