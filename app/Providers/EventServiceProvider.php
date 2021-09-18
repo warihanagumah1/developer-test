@@ -26,6 +26,9 @@ class EventServiceProvider extends ServiceProvider
             //
 
         ],
+        BadgeUnlocked::class => [
+            //
+        ],
     ];
 
     /**
