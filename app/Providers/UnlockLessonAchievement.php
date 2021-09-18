@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Events\AchivementUnlocked;
 use App\Events\LessonWatched;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;

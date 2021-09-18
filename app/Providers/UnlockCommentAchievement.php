@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Comment;
 use App\Models\User;
 use App\Events\CommentWritten;
+use App\Events\AchivementUnlocked;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
