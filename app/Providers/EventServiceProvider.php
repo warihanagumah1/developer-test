@@ -23,11 +23,11 @@ class EventServiceProvider extends ServiceProvider
             UnlockLessonAchievement::class,
         ],
         AchievementUnlocked::class => [
-            //
+            GetAchievemnetsUnlocked::class,
 
         ],
         BadgeUnlocked::class => [
-            //
+            GetBadgeUnlocked::class,
         ],
     ];
 
