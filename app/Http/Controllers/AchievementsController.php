@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AchievementsController extends Controller
 {
@@ -115,7 +117,7 @@ class AchievementsController extends Controller
     {
 
         //call the private getUnlockedAchivements and get comments written and lessons watched achievements
-        $achievements_unlocked = $this->getUnlockedAchivements($user->id);
+        $achievements_unlocked = $this->getUnlockedAchivements($user_id);
         $comments = $achievements_unlocked['comments'];
         $lessons = $achievements_unlocked['lessons'];
 
@@ -188,7 +190,7 @@ class AchievementsController extends Controller
     {
 
         //call the private getUnlockedAchivements and get  and count all achivements
-        $achievements_unlocked = $this->getUnlockedAchivements($user->id);
+        $achievements_unlocked = $this->getUnlockedAchivements($user_id);
         $count_all = count($achievements_unlocked['all']);
 
         $badge_name = '';
@@ -224,7 +226,7 @@ class AchievementsController extends Controller
     private function getNextBadge($user_id)
     {
         //call private function getCurrentBadge to get user current badge
-        $current_badge = $this->getCurrentBadge($user->id);
+        $current_badge = $this->getCurrentBadge($user_id);
         
 
         $next_badge = "";
@@ -254,7 +256,7 @@ class AchievementsController extends Controller
     private function getRemainingAchievements($user_id)
     {
         //call the private getUnlockedAchivements and get  and count all achivements
-        $achievements_unlocked = $this->getUnlockedAchivements($user->id);
+        $achievements_unlocked = $this->getUnlockedAchivements($user_id);
         $count_all = count($achievements_unlocked['all']);
 
         $num_next_achievements = 0;
@@ -265,7 +267,7 @@ class AchievementsController extends Controller
         }else if($count_all >= 4 && $count_all < 8)
         {
             $num_next_achievements = 8 - $count_all;
-            
+
         }else if($count_all >= 8 && $count_all < 10)
         {
             $num_next_achievements = 10 - $count_all;

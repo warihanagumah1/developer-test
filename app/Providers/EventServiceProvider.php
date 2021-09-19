@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use App\Events\LessonWatched;
+use App\Listeners\GetAchievemnetsUnlocked;
+use App\Listeners\UnlockLessonAchievement;
+use App\Listeners\UnlockCommentAchievement;
 use App\Events\CommentWritten;
 use App\Events\AchievementUnlocked;
 use Illuminate\Support\Facades\Event;

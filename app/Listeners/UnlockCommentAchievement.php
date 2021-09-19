@@ -3,11 +3,13 @@
 namespace App\Listeners;
 
 use App\Models\Comment;
+use App\Events\AchievementUnlocked;
 use App\Models\User;
 use App\Events\CommentWritten;
 use App\Events\AchivementUnlocked;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Carbon\Carbon;
 
 class UnlockCommentAchievement
 {
@@ -49,7 +51,7 @@ class UnlockCommentAchievement
         if($num_comments >= 1 && $num_comments < 3)
         {
             $achievement_name = "First Comment Written";
-            
+
         }else if($num_comments >= 3 && $num_comments < 5)
         {
             $achievement_name = "3 Comments Written";

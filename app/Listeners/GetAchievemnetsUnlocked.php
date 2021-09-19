@@ -7,6 +7,7 @@ use App\Events\BadgeUnlocked;
 use App\Events\AchievementUnlocked;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Facades\DB;
 
 class GetAchievemnetsUnlocked
 {

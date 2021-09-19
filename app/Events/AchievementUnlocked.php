@@ -27,6 +27,7 @@ class AchievementUnlocked
         $this->achievement_name = $achievement_name;
         $this->user = $user;
     }
+    
     /**
      * Get the channels the event should broadcast on.
      *

@@ -6,16 +6,15 @@ use Tests\TestCase;
 use App\Models\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class ExampleTest extends TestCase
+class AchievementsControllerTest extends TestCase
 {
     use DatabaseTransactions;
 
     /**
-     * A basic test example.
-     *
-     * @return void
+     * Retrive achivements for a user
+     * @test
      */
-    public function test_example()
+    public function retrieves_achievements()
     {
         $user = User::factory()->create();
         
@@ -23,4 +22,6 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    
 }
