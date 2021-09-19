@@ -23,6 +23,7 @@ class EventServiceProvider extends ServiceProvider
             UnlockLessonAchievement::class,
         ],
         AchievementUnlocked::class => [
+            //this listener listens for and count number of achivements to unloack a badge
             GetAchievemnetsUnlocked::class,
 
         ],

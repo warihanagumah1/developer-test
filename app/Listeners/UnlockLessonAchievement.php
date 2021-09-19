@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace App\Listeners;
 
 use App\Events\AchivementUnlocked;
 use App\Events\LessonWatched;
@@ -27,7 +27,7 @@ class UnlockLessonAchievement
      */
     public function handle(LessonWatched $event)
     {
-        //get and save user lesson
+        //get and save user lesson watched
         $lesson = $event->lesson;
         $lesson_id = $lesson->id;
         $user = $event->user;
@@ -48,9 +48,10 @@ class UnlockLessonAchievement
 
         $achievement_name = '';
 
-        if($lessons_watched == 1)
+        if($lessons_watched >= 1 && $lessons_watched < 5) 
         {
             $achievement_name = "First Lesson Watched";
+            
         }else if($lessons_watched >= 5 && $lessons_watched < 10)
         {
             $achievement_name = "5 Lessons Watched";

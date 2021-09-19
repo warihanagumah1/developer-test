@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace App\Listeners;
 
 use App\Models\Comment;
 use App\Models\User;
@@ -46,10 +46,11 @@ class UnlockCommentAchievement
 
         $achievement_name = '';
 
-        if($num_comments == 1)
+        if($num_comments >= 1 && $num_comments < 3)
         {
             $achievement_name = "First Comment Written";
-        }else if($num_comments > 1 && $num_comments < 5)
+            
+        }else if($num_comments >= 3 && $num_comments < 5)
         {
             $achievement_name = "3 Comments Written";
 
