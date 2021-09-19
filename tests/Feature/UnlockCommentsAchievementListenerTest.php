@@ -18,7 +18,7 @@ class UnlockCommentsAchievementListenerTest extends TestCase
      * A basic feature test example.
      * @test
      */
-    public function unlockcommentachievement()
+    public function unlockCommentAchievement()
     {
         $user = User::factory()->create();
 

@@ -14,7 +14,7 @@ class AchievementsControllerTest extends TestCase
      * Retrive achivements for a user
      * @test
      */
-    public function retrieves_achievements()
+    public function retrieveAchievements()
     {
         $user = User::factory()->create();
         
